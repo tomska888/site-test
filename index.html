@@ -22,47 +22,112 @@
   </head>
   <body>
     <header>
-      <div>
-        <!-- Search -->
-        <img src="./icons/globe-white.svg" alt="Logo">
-        <div>
-          <img src="./icons/three-bars-white.svg" alt="Menu">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-left">
+            <input type="text" placeholder="Search" class="search-field">
+          </div>
+          <div class="navbar-middle">
+            <img src="./icons/globe-white.svg" alt="Globe" class="icon">
+          </div>
+          <div class="navbar-right d-flex align-items-center">
+            <a href="#" class="nav-link">Destinations</a>
+            <button class="btn btn-light ms-3">Sign In</button>
+          </div>
         </div>
-      </div>
-      <div>
-        <div>Year long travel</div>
-        <h1>
-          Book your next<br>
-          destination
-        </h1>
-        <!-- Booking form -->
+        <hr class="divider">
+      </nav>
+      <div class="spacer"></div>
+      <div class="hero">
+        <div class="hero-text">
+          <p class="small-text">Year long travel</p>
+          <h1 class="big-text">Book your next destination</h1>
+        </div>
+        <form class="booking-form">
+          <select class="form-control" name="destination">
+            <option>Paris</option>
+            <option>San Francisco</option>
+            <option>Sydney</option>
+            <option>Tokyo</option>
+          </select>
+          <input type="date" name="from" class="form-control">
+          <input type="date" name="to" class="form-control">
+          <input type="number" name="guests" min="2" max="10" value="2" class="form-control">
+          <button type="submit" class="btn btn-warning">
+            <img src="./icons/arrow-right.svg" alt="Submit">
+          </button>
+        </form>
       </div>
     </header>
-    <section>
-      <h2>Destinations</h2>
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet, adventure travel mountains, beach
-          resorts and cultural experiences await. Pack your bags and get
-          ready to explore the world! From bustling cities to tranquil
-          countryside getaways, there's a destination for every type of
-          traveler.
-        </p>
-        <!-- remaining text -->
-      </div>
-      <div>
-        <!-- Destinations -->
+    <section class="destinations">
+      <div class="container">
+        <h2>Destinations</h2>
+        <div class="text-columns">
+          <p>
+            Adventure travel mountains, beach
+            resorts and cultural experiences await. Pack your bags and get
+            ready to explore the world! From bustling cities to tranquil
+            countryside getaways, there's a destination for every type of
+            traveler.
+          </p>
+          <p>
+            If you’re a culture lover, the historic cities of London and
+            Edinburgh should be at the top of your list. Walk the
+            streets of London’s West End, marvel at the architecture of
+            Big Ben and Buckingham Palace.
+          </p>
+          <p>
+            For those seeking relaxation, head to the spas and resorts of
+            the English countryside. Indulge in luxury or something more
+            active—strap on your hiking boots and tackle the rugged trails.
+          </p>
+        </div>
+        <div class="city-grid">
+          <div class="city">
+            <img src="./images/destinations/paris.jpg" alt="Paris" class="city-image">
+            <div class="city-name">Paris</div>
+            <div class="country-name">France</div>
+          </div>
+          <div class="city">
+            <img src="./images/destinations/san-francisco.jpg" alt="San Francisco" class="city-image">
+            <div class="city-name">San Francisco</div>
+            <div class="country-name">United States</div>
+          </div>
+          <div class="city">
+            <img src="./images/destinations/sydney.jpg" alt="Sydney" class="city-image">
+            <div class="city-name">Sydney</div>
+            <div class="country-name">Australia</div>
+          </div>
+          <div class="city">
+            <img src="./images/destinations/tokyo.jpg" alt="Tokyo" class="city-image">
+            <div class="city-name">Tokyo</div>
+            <div class="country-name">Japan</div>
+          </div>
+        </div>
       </div>
     </section>
     <footer>
-      <!-- links -->
-      <!-- newsletter form -->
-      <div>
-        <h3>Newsletter</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          euismod, nisl nec tincidunt dapibus, magna libero fermentum augu.
-        </p>
+      <div class="container footer-content">
+        <div class="links">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h3>Newsletter</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            euismod, nisl nec tincidunt dapibus, magna libero fermentum augue.
+          </p>
+          <form>
+            <input type="email" placeholder="Email" class="form-control" style="width: 200px;">
+            <button type="submit" class="btn btn-success">Subscribe</button>
+          </form>
+        </div>
       </div>
     </footer>
   </body>
