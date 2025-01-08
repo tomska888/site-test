@@ -9,12 +9,15 @@ header {
     padding-bottom: 3rem;
 }
 
+/* General Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     background: transparent;
+    position: relative;
+    z-index: 10;
 }
 
 .navbar .container {
@@ -24,26 +27,164 @@ header {
     width: 100%;
 }
 
+/* Search Section */
+.navbar-left {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-icon-label {
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 24px;
+    height: 44px;
+}
+
+.search-field {
+    width: 0px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    position: absolute;
+    margin-left: 30px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-field::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-checkbox {
+    display: none;
+}
+
+.search-checkbox:checked~.search-field {
+    width: 200px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Globe Icon */
 .navbar-middle {
     flex-grow: 1;
     text-align: center;
 }
 
-.search-field {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+.icon {
+    width: 36px;
+    height: 36px;
 }
 
-.search-field::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+/* Hamburger Menu */
+.navbar-right {
+    position: relative;
 }
 
+.menu-icon-label {
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 40px;
+    right: 0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.dropdown-menu .nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.dropdown-menu .btn {
+    background: white;
+    color: black;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+.menu-checkbox:checked~.dropdown-menu {
+    display: flex;
+}
+
+/* Divider */
 .divider {
     border-top: 1px solid white;
     opacity: 0.5;
+    margin-top: 10px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .search-field {
+        width: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .search-checkbox:checked~.search-field {
+        width: 150px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .navbar-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .dropdown-menu {
+        right: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .search-field {
+        width: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .search-checkbox:checked~.search-field {
+        width: 120px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .navbar-middle .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu-icon {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Hero Text */
