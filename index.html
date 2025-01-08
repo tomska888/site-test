@@ -24,15 +24,30 @@
     <header>
       <nav class="navbar">
         <div class="container">
+          <!-- Left: Search -->
           <div class="navbar-left">
+            <label for="search-toggle" class="search-icon-label">
+              <img src="./icons/search-white.svg" alt="Search" class="search-icon">
+            </label>
+            <input type="checkbox" id="search-toggle" class="search-checkbox">
             <input type="text" placeholder="Search" class="search-field">
           </div>
+      
+          <!-- Middle: Globe Icon -->
           <div class="navbar-middle">
             <img src="./icons/globe-white.svg" alt="Globe" class="icon">
           </div>
-          <div class="navbar-right d-flex align-items-center">
-            <a href="#" class="nav-link">Destinations</a>
-            <button class="btn btn-light ms-3">Sign In</button>
+      
+          <!-- Right: Hamburger Menu -->
+          <div class="navbar-right">
+            <label for="menu-toggle" class="menu-icon-label">
+              <img src="./icons/three-bars-white.svg" alt="Menu" class="menu-icon">
+            </label>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <div class="dropdown-menu">
+              <a href="#" class="nav-link">Destinations</a>
+              <button class="btn btn-light">Sign In</button>
+            </div>
           </div>
         </div>
         <hr class="divider">
