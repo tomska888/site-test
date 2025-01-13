@@ -1,4 +1,4 @@
-/* Destinations Section */
+/* Main Destinations Section */
 .destinations {
     background: white;
     padding: 3rem 0;
@@ -21,6 +21,14 @@
     flex: 1;
 }
 
+/* Media for main destinations text */
+@media (max-width: 768px) {
+    .text-columns {
+        flex-direction: column;
+    }
+}
+
+/* Main Destinations Gallery */
 .city-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -46,21 +54,225 @@
 
 .city-grid .city-name {
     font-weight: bold;
+    padding-top: 20px;
 }
 
 .city-grid .country-name {
     color: gray;
 }
 
-/* Responsive */
+/* Media for main city grid */
 @media (max-width: 768px) {
     .city-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Destinations Gallery */
+.gallery {
+    padding: 2rem 0;
+}
+
+.gallery .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);           
+    gap: 1rem;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
-    .text-columns {
+    .gallery .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        }
+}
+
+.gallery .grid-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery .grid-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery .grid-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery .grid-item .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery .grid-item:hover .hover-overlay {
+    opacity: 1;
+}
+
+/* City Details */
+.destination-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    align-items: flex-start;
+}
+
+.destination-photo {
+    flex: 1 1 40%;
+     padding: 20px;
+}
+
+/* Destination Photo Styling */
+.destination-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Destination photo adjustment for smaller screens */
+@media (max-width: 1024px) {
+    .destination-container {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .destination-photo {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .destination-details {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-photo img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    .destination-photo img {
+        max-height: 200px;
+    }
+}
+
+.destination-details {
+    flex: 1 1 60%;
+    padding: 20px;
+}
+
+.destination-details h2 {
+    font-family: 'Dancing Script', cursive;
+     font-size: 2rem;
+}
+
+/* Booking Form Styling */
+.booking-form1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.booking-form1 .row {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.booking-form1 .row .col {
+    flex: 1;
+}
+
+.booking-form1 .form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.booking-form1 .form-label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #333;
+}
+
+.booking-form1 .booking-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffcc00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.booking-form1 .booking-btn:hover {
+    background: #ffbb00;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .booking-form1 {
+        padding: 1rem;
+    }
+
+    .booking-form1 .row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    .booking-form1 {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .booking-form1 .form-control {
+        font-size: 0.875rem;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 250px;
     }
 }

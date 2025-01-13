@@ -9,6 +9,17 @@ header {
     padding-bottom: 3rem;
 }
 
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    z-index: 1;
+    min-height: 100px;
+}
 /* General Navbar Styling */
 .navbar {
     display: flex;
@@ -31,7 +42,6 @@ header {
 .navbar-left {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -92,6 +102,7 @@ header {
 }
 
 .menu-icon-label {
+    display: none;
     cursor: pointer;
 }
 
@@ -100,45 +111,69 @@ header {
     height: 24px;
 }
 
-.dropdown-menu {
+.menu-checkbox {
     display: none;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: 40px;
-    right: 0;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-align: center;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    position: static;
+    gap: 15px;
+    border: none;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .dropdown-menu .nav-link {
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
-    margin-bottom: 10px;
 }
 
 .dropdown-menu .btn {
     background: white;
     color: black;
 }
+ /* Hamburge not display on 769 and larger screens */
+@media (min-width: 769px) {
+    .navbar-middle {
+        margin-left: 130px;
+    }
 
-.menu-checkbox {
-    display: none;
+    .nav-link:hover {
+        color: rgb(0, 0, 0);
+    }
 }
 
-.menu-checkbox:checked~.dropdown-menu {
-    display: flex;
+/* Hamburger Menu on smaller screens */
+@media (max-width: 768px) {
+    .menu-icon-label {
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        top: 50px;
+        right: 0;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .menu-checkbox:checked~.dropdown-menu {
+        display: flex;
+    }
+
+    .dropdown-menu .nav-link {
+        color: black;
+    }
 }
 
-/* Divider */
-.divider {
-    border-top: 1px solid white;
-    opacity: 0.5;
-    margin-top: 10px;
-}
-
-/* Responsive Styling */
+/* Header 768x1024 screens */
 @media (max-width: 768px) {
     .search-field {
         width: 0;
@@ -163,6 +198,7 @@ header {
     }
 }
 
+/* Header 360x740 screens */
 @media (max-width: 360px) {
     .search-field {
         width: 0;
@@ -171,7 +207,7 @@ header {
     }
 
     .search-checkbox:checked~.search-field {
-        width: 120px;
+        width: 80px;
         visibility: visible;
         opacity: 1;
     }
@@ -187,7 +223,27 @@ header {
     }
 }
 
-/* Hero Text */
+/* Spacer */
+.spacer {
+    height: 550px;
+    /* Default height */
+}
+
+/* Header 768x1020 screens */
+@media (max-width: 1020px) {
+    .spacer {
+        height: 50px;
+    }
+}
+
+/* Header 360x740 screens */
+@media (max-width: 768px) {
+    .spacer {
+        height: 30px;
+    }
+}
+
+/* Hero (Main) Text */
 .hero-text {
     padding: 3rem 0 1rem;
 }
@@ -203,26 +259,6 @@ header {
     font-size: 3rem;
 }
 
-/* Spacer for different screen sizes */
-.spacer {
-    height: 690px;
-    /* Default height */
-}
-
-@media (max-width: 1024px) {
-    .spacer {
-        height: 50px;
-        /* Adjust height for medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .spacer {
-        height: 30px;
-        /* Adjust height for small screens */
-    }
-}
-
 /* Booking Form */
 .booking-form {
     display: flex;
@@ -230,6 +266,18 @@ header {
     gap: 1rem;
     margin-top: 1rem;
     flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: end;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 .booking-form .form-control {

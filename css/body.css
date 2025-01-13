@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    body {
+        min-height: 100vh;
+    }
+}

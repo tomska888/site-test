@@ -1,0 +1,20 @@
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 360px) {
+    .contact-form {
+        max-width: 340px;
+    }
+    
+}

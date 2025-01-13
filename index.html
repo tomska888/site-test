@@ -19,6 +19,7 @@
     <link href="./css/header.css" rel="stylesheet" type="text/css">
     <link href="./css/destinations.css" rel="stylesheet" type="text/css">
     <link href="./css/footer.css" rel="stylesheet" type="text/css">
+    <link href="./css/body.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header>
@@ -45,12 +46,11 @@
             </label>
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <div class="dropdown-menu">
-              <a href="#" class="nav-link">Destinations</a>
+              <a href="/destinations.html" class="nav-link">Destinations</a>
               <button class="btn btn-light">Sign In</button>
             </div>
           </div>
         </div>
-        <hr class="divider">
       </nav>
       <div class="spacer"></div>
       <div class="hero">
@@ -59,18 +59,32 @@
           <h1 class="big-text">Book your next destination</h1>
         </div>
         <form class="booking-form">
-          <select class="form-control" name="destination">
-            <option>Paris</option>
-            <option>San Francisco</option>
-            <option>Sydney</option>
-            <option>Tokyo</option>
-          </select>
-          <input type="date" name="from" class="form-control">
-          <input type="date" name="to" class="form-control">
-          <input type="number" name="guests" min="2" max="10" value="2" class="form-control">
+          <div class="form-group">
+            <label id="destination" class="form-label">Destination</label>
+            <select class="form-control" name="destination">
+              <option>Paris</option>
+              <option>San Francisco</option>
+              <option>Sydney</option>
+              <option>Tokyo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label id="from" class="form-label">From</label>
+            <input type="date" name="from" class="form-control">
+          </div>
+          <div class="form-group">
+            <label id="to" class="form-label">To</label>
+            <input type="date" name="to" class="form-control">
+          </div>
+          <div class="form-group">
+            <label id="guests" class="form-label">Guests</label>
+            <input type="number" name="guests" min="2" max="10" value="2" class="form-control">
+          </div>
+          <div class="form-group">
           <button type="submit" class="btn btn-warning">
             <img src="./icons/arrow-right.svg" alt="Submit">
           </button>
+          </div>
         </form>
       </div>
     </header>
@@ -127,9 +141,8 @@
           <h3>Links</h3>
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Destinations</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="newsletter">
